@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D19ABD99-268C-4F6E-A240-4F2193568836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ros2cs", "ros2cs", "{B844DB7C-3C7D-4B02-BA29-97268ED03293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ros2cs_tests", "src\ros2cs\ros2cs_tests\ros2cs_tests.csproj", "{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B844DB7C-3C7D-4B02-BA29-97268ED03293} = {D19ABD99-268C-4F6E-A240-4F2193568836}
+		{6A1602AF-EDDB-4E52-88D3-BC2582C7A80A} = {B844DB7C-3C7D-4B02-BA29-97268ED03293}
+	EndGlobalSection
+EndGlobal

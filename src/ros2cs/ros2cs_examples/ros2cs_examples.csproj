@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ros2cs_core\ros2cs_core.csproj" />
+    <Reference Include="../../../install/lib/dotnet/std_msgs_assembly.dll" />
+    <Reference Include="../../../install/lib/dotnet/sensor_msgs_assembly.dll" />
+    <Reference Include="../../../install/lib/dotnet/example_interfaces_assembly.dll" />
+    <Reference Include="../../../install/lib/dotnet/builtin_interfaces_assembly.dll" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

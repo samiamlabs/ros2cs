@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ros2cs_core\ros2cs_core.csproj" />
+
+    <Reference Include="../../../install/lib/dotnet/std_msgs_assembly.dll" />
+    <Reference Include="../../../install/lib/dotnet/example_interfaces_assembly.dll" />
+    <Reference Include="../../../install/lib/dotnet/test_msgs_assembly.dll" />
+
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
