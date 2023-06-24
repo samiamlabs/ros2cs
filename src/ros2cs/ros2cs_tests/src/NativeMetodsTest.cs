@@ -604,4 +604,36 @@ namespace ROS2.TestNativeMethods
             NativeRclInterface.rclcs_ros_clock_dispose(clockHandle);
         }
     }
+
+    [TestFixture]
+    public class Actions
+    {
+        rcl_context_t context;
+        rcl_node_t node;
+        IntPtr nodeOptions = new IntPtr();
+        rcl_subscription_t subscription;
+        IntPtr subscriptionOptions = new IntPtr();
+
+        [SetUp]
+        public void SetUp()
+        {
+            RCLInitialize.InitRcl(ref context);
+            NodeInitialize.InitNode(ref node, nodeOptions, ref context);
+            SubscriptionInitialize.InitSubscription(ref subscription, subscriptionOptions, ref node);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            NodeInitialize.ShutdownNode(ref node, nodeOptions);
+            RCLInitialize.ShutdownRcl(ref context);
+        }
+
+        [Test]
+        public void FirstTest()
+        {
+            // Assert.That(NativeRcl.rcl_subscription_is_valid(ref subscription), Is.True);
+        }
+
+    }
 }

@@ -61,4 +61,78 @@ TEMPLATE(
 @[end for]@
 @[end if]@
 @# // endif
+@
+@#######################################################################
+@# Handle actions
+@#######################################################################
+@
+@{
+from rosidl_parser.definition import Action
+}@
+@[for action in content.get_elements_of_type(Action)]@
+@{
+TEMPLATE(
+    'msg.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.goal, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'msg.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.result, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'msg.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.feedback, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'srv.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.send_goal_service,
+    message=action.send_goal_service.request_message, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'srv.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.send_goal_service,
+    message=action.send_goal_service.response_message, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'srv.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.get_result_service,
+    message=action.get_result_service.request_message, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'srv.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.get_result_service,
+    message=action.get_result_service.response_message, include_parts=include_parts,
+    get_c_type=get_c_type)
+}@
+
+@{
+TEMPLATE(
+    'action.c.em',
+    package_name=package_name, interface_path=interface_path, action=action)
+}@
+
+@[end for]@
+
+
 

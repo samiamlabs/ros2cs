@@ -58,4 +58,68 @@ TEMPLATE(
 @[end for]@
 @[end if]@
 @# // endif
+@
+@
+@#######################################################################
+@# Handle actions
+@#######################################################################
+@
+@{
+from rosidl_parser.definition import Action
+}@
+@[for action in content.get_elements_of_type(Action)]@
+@{
+TEMPLATE(
+    'msg_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.goal, include_parts=include_parts)
+}@
 
+@{
+TEMPLATE(
+    'msg_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.result, include_parts=include_parts)
+}@
+
+TEMPLATE(
+    'msg_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,
+    message=action.feedback, include_parts=include_parts)
+}@
+
+@{
+TEMPLATE(
+    'srv_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.send_goal_service,
+    message=action.send_goal_service.request_message, include_parts=include_parts)
+}@
+
+@{
+TEMPLATE(
+    'srv_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.send_goal_service,
+    message=action.send_goal_service.response_message, include_parts=include_parts)
+}@
+
+@{
+TEMPLATE(
+    'srv_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.get_result_service,
+    message=action.get_result_service.request_message, include_parts=include_parts)
+}@
+
+@{
+TEMPLATE(
+    'srv_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path,service=action.get_result_service,
+    message=action.get_result_service.response_message, include_parts=include_parts)
+}@
+
+@{
+TEMPLATE(
+    'action_typesupport.c.em',
+    package_name=package_name, interface_path=interface_path, action=action)
+}@
+@[end for]@
+@

@@ -11,9 +11,23 @@
                 "isDefault": true
             },
             "options": {
-                "cwd": "${workspaceFolder}/.."
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": "$gcc"
         }, 
+        {
+            "label": "build test_msgs",
+            "detail": "Build ros2 test_msgs",
+            "type": "shell",
+            "command": "colcon build --packages-select test_msgs rosidl_generator_cs --merge-install --event-handlers console_direct+ --cmake-args -DCMAKE_BUILD_TYPE=Release --no-warn-unused-cli",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc"
+        }
     ]
 }
