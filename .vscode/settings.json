@@ -1,18 +1,14 @@
 {
     "python.autoComplete.extraPaths": [
-        "/home/ros/src/ros2cs/install/local/lib/python3.10/dist-packages",
-        "/home/ros/src/ros2cs/install/lib/python3.10/site-packages",
-        "/home/ros/install/lib/python3.10/site-packages",
-        "/home/ros/install/local/lib/python3.10/dist-packages",
+        "/home/ros/ws/install/local/lib/python3.10/dist-packages",
+        "/home/ros/ws/install/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages",
         "/opt/ros/humble/lib/python3.8/site-packages"
     ],
     "python.analysis.extraPaths": [
-        "/home/ros/src/ros2cs/install/local/lib/python3.10/dist-packages",
-        "/home/ros/src/ros2cs/install/lib/python3.10/site-packages",
-        "/home/ros/install/lib/python3.10/site-packages",
-        "/home/ros/install/local/lib/python3.10/dist-packages",
+        "/home/ros/ws/install/local/lib/python3.10/dist-packages",
+        "/home/ros/ws/install/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages",
         "/opt/ros/humble/lib/python3.8/site-packages"

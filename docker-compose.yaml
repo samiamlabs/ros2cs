@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  ros2cs:
+    container_name: ros2cs
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${XAUTHORITY}:/tmp/.Xauthority
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./:/home/ros/ws
+    tty: true
+    environment:
+      - DISPLAY
+      - XAUTHORITY=/tmp/.Xauthority
+      - ROS_DOMAIN_ID=0
+    network_mode: host
+    command: tail -f /dev/null
+    restart: always

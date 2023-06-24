@@ -6,19 +6,9 @@
         "limitSymbolsToIncludedHeaders": false
       },
       "includePath": [
-        "/home/ros/src/ros2cs/install/include/**",
+        "/home/ros/ws/install/include/**",
         "/home/ros/install/include/**",
         "/opt/ros/humble/include/**",
-        "/home/ros/src/ros2cs/src/ros2/common_interfaces/sensor_msgs/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_bullet/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_eigen/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_eigen_kdl/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_geometry_msgs/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_kdl/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_ros/include/**",
-        "/home/ros/src/ros2cs/src/ros2/geometry2/tf2_sensor_msgs/include/**",
-        "/home/ros/src/ros2cs/src/ros2/rcl_interfaces/test_msgs/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",
