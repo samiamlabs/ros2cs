@@ -279,5 +279,15 @@ namespace ROS2
         return false;
       }
     }
+
+    // <summary> Create action client </summary>
+    ActionClient<TAction, TGoal, TResult, TFeedback> CreateActionClient<TAction, TGoal, TResult, TFeedback>(string actionName)
+            where TAction : IRosActionDefinition<TGoal, TResult, TFeedback>
+            where TGoal : Message, new()
+            where TResult : Message, new()
+            where TFeedback : Message, new()
+    {
+      return new ActionClient<TAction, TGoal, TResult, TFeedback>();
+    }
   }
 }

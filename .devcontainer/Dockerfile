@@ -84,6 +84,6 @@ USER $USERNAME
 
 RUN sudo chown -R ros:ros /home/ros
 
-RUN echo "if [ -f /home/ros/install/setup.bash ]; then source /home/ros/ws/install/setup.bash; fi" >> /home/ros/.bashrc
+RUN echo "if [ -f /home/ros/ws/install/setup.bash ]; then source /home/ros/ws/install/setup.bash; fi" >> /home/ros/.bashrc
 RUN echo "export RCUTILS_COLORIZED_OUTPUT=1" >> /home/ros/.bashrc
 

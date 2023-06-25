@@ -79,6 +79,18 @@ foreach(_idl_file ${rosidl_generate_interfaces_ABS_IDL_FILES})
         list(APPEND _type_support_by_generated_srv_c_files "${_typesupport_impl}")
     endforeach()
   elseif(_parent_folder STREQUAL "action")
+    list(APPEND _generated_srv_cs_files
+      "${_output_path}/${_parent_folder}/${_module_name}.cs"
+    )
+    list(APPEND _generated_srv_c_files
+      "${_output_path}/${_parent_folder}/${_module_name}_s.c"
+    )
+    foreach(_typesupport_impl ${_typesupport_impls})
+        list_append_unique(_generated_srv_c_ts_files
+          "${_output_path}/${_parent_folder}/${_module_name}.ep.${_typesupport_impl}.c"
+        )
+        list(APPEND _type_support_by_generated_srv_c_files "${_typesupport_impl}")
+    endforeach()
   else()
     message(FATAL_ERROR "Interface file with unknown parent folder: ${_idl_file}")
   endif()
@@ -102,6 +114,9 @@ endforeach()
 set(target_dependencies
   "${rosidl_generator_cs_BIN}"
   ${rosidl_generator_cs_GENERATOR_FILES}
+  "${rosidl_generator_cs_TEMPLATE_DIR}/action.c.em"
+  "${rosidl_generator_cs_TEMPLATE_DIR}/action_typesupport.c.em"
+  "${rosidl_generator_cs_TEMPLATE_DIR}/action.cs.em"
   "${rosidl_generator_cs_TEMPLATE_DIR}/idl.c.em"
   "${rosidl_generator_cs_TEMPLATE_DIR}/idl_typesupport.c.em"
   "${rosidl_generator_cs_TEMPLATE_DIR}/idl.cs.em"

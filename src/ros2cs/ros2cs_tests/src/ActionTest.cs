@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using example_interfaces.srv;
+using test_msgs.action;
 
 namespace ROS2.Test
 {
@@ -10,10 +10,6 @@ namespace ROS2.Test
 
         private INode Node;
 
-        private IService<AddTwoInts_Request, AddTwoInts_Response> Service;
-
-        private Func<AddTwoInts_Request, AddTwoInts_Response> OnRequest =
-            msg => throw new InvalidOperationException("callback not set");
 
         [SetUp]
         public void SetUp()
@@ -33,7 +29,7 @@ namespace ROS2.Test
         [Test]
         public void TestActionClientIsReady()
         {
-            // var actionClient = Node.Cre
+            // ActionClient actionClient = _clientNode.CreateActionClient<Fibonacci, Fibonacci_Goal, Fibonacci_Result, Fibonacci_Feedback>("unittest_dotnet_fibonacci");
         }
 
     }
